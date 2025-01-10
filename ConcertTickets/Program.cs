@@ -8,7 +8,7 @@ namespace ConcertTickets
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
@@ -32,8 +32,10 @@ namespace ConcertTickets
                 options.Password.RequiredLength = 6;
             });
 
-
             var app = builder.Build();
+
+            // Create admin user
+            await CreateAdminUserAsync(app);
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
@@ -52,6 +54,7 @@ namespace ConcertTickets
 
             app.UseRouting();
 
+            app.UseAuthentication(); // Add this line
             app.UseAuthorization();
 
             app.MapControllerRoute(
@@ -59,7 +62,7 @@ namespace ConcertTickets
                 pattern: "{controller=Home}/{action=Index}/{id?}");
             app.MapRazorPages();
 
-            app.RunAsync();
+            await app.RunAsync();
         }
 
         private static async Task CreateAdminUserAsync(WebApplication app)
