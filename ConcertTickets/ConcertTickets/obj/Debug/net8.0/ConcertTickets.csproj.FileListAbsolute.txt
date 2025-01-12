@@ -154,3 +154,4 @@ C:\Users\Gebruiker\source\repos\AD-Project-2425\ConcertTickets\ConcertTickets\ob
 C:\Users\Gebruiker\source\repos\AD-Project-2425\ConcertTickets\ConcertTickets\obj\Debug\net8.0\ConcertTickets.pdb
 C:\Users\Gebruiker\source\repos\AD-Project-2425\ConcertTickets\ConcertTickets\obj\Debug\net8.0\ConcertTickets.genruntimeconfig.cache
 C:\Users\Gebruiker\source\repos\AD-Project-2425\ConcertTickets\ConcertTickets\obj\Debug\net8.0\ref\ConcertTickets.dll
+C:\Users\Gebruiker\source\repos\AD-Project-2425\ConcertTickets\ConcertTickets\obj\Debug\net8.0\ConcertTickets.sourcelink.json
