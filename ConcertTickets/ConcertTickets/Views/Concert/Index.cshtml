@@ -1,0 +1,32 @@
+﻿@model IEnumerable<ConcertViewModel>
+
+<div class="container">
+    <div class="row">
+        @foreach (var concert in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="@concert.ArtistPicture" class="card-img-top" alt="@concert.Artist">
+                    <div class="card-body">
+                        <div class="date-box">
+                            <span class="date">@concert.Date:dd MMM</span>
+                        </div>
+                        <h5 class="card-title">@concert.Artist</h5>
+                        <p class="card-text">@concert.Location</p>
+
+                        @if (concert.TotalAvailableTickets > 0)
+                        {
+                            var buttonClass = concert.TotalAvailableTickets > 500 ? "btn-primary" : "btn-warning";
+                            var buttonText = concert.TotalAvailableTickets > 500 ? "Koop tickets" : "Laatste tickets!";
+                            <a asp-action="Buy" asp-route-id="@concert.Id" class="btn @buttonClass">@buttonText</a>
+                        }
+                        else
+                        {
+                            <button class="btn btn-secondary" disabled>Uitverkocht</button>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
