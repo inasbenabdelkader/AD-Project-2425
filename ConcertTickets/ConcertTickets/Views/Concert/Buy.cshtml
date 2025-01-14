@@ -1,0 +1,62 @@
+﻿@using ConcertTickets.Models.ViewModel
+@model ConcertViewModel
+
+<div class="container">
+    <div class="row">
+      @*   Concert Details  *@
+        <div class="col-md-6">
+            <div class="card">
+                <img src="@Model.ArtistPicture" class="card-img-top" alt="@Model.Artist">
+                <div class="card-body">
+                    <div class="date-box">
+                        <span class="date">
+                            @Model.Date.ToString("dd MMM")
+                        </span>
+                    </div>
+                    <h5 class="card-title">
+                        @Model.Artist
+                    </h5>
+                    <p class="card-text">
+                        @Model.Location
+                    </p>
+                </div>
+            </div>
+        </div>
+
+       @*   Ticket Offers  *@
+        <div class="col-md-6">
+            <div class="list-group">
+                @foreach (var ticket in Model.TicketOffers)
+                {
+                    <div class="list-group-item d-flex justify-content-between align-items-center">
+                   @*    Ticket Info  *@
+                        <div>
+                            <h6>
+                                @ticket.TicketType
+                            </h6>
+                            <p class="mb-0">
+                                €@ticket.Price
+                            </p>
+                        </div>
+
+                    
+                        <div>
+                            <span class="badge bg-primary">
+                                @ticket.NumTickets tickets
+                            </span>
+                            @if (ticket.NumTickets > 0)
+                            {
+                                <a asp-controller="Order"
+                                   asp-action="Create"
+                                   asp-route-id="@ticket.Id"
+                                   class="btn btn-primary ms-2">
+                                    Koop tickets
+                                </a>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

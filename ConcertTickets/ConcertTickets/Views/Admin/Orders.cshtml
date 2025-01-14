@@ -1,0 +1,45 @@
+﻿@using ConcertTickets.Models.ViewModel
+@model IEnumerable<OrderViewModel>
+
+<div class="container">
+   
+    <h2>Openstaande bestellingen</h2>
+
+  
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Klant</th>
+                <th>Concert</th>
+                <th>Type ticket</th>
+                <th>Aantal</th>
+                <th>Totaalprijs</th>
+                <th>Korting</th>
+                <th>Actie</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model)
+            {
+                <tr>
+                   
+                    <td>@order.UserName</td>
+                    <td>@order.ConcertInfo</td>
+                    <td>@order.TicketType</td>
+                    <td>@order.NumTickets</td>
+                    <td>€@order.TotalPrice</td>
+                    <td>@(order.DiscountApplied ? "Ja" : "Nee")</td>
+
+                    <td>
+                        <a asp-action="SetPaid"
+                           asp-route-id="@order.Id"
+                           class="btn btn-success btn-sm">
+                            Bevestig betaling
+                        </a>
+                    </td>
+                </tr>
+            }
+           
+        </tbody>
+    </table>
+</div>

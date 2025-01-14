@@ -24,8 +24,24 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Gebruiker/source/repos/AD-Project-2425/ConcertTickets/ConcertTickets/Views/Admin/Orders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cT3JkZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gebruiker/source/repos/AD-Project-2425/ConcertTickets/ConcertTickets/Views/Concert/Buy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uY2VydFxCdXkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Gebruiker/source/repos/AD-Project-2425/ConcertTickets/ConcertTickets/Views/Concert/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uY2VydFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gebruiker/source/repos/AD-Project-2425/ConcertTickets/ConcertTickets/Views/Order/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gebruiker/source/repos/AD-Project-2425/ConcertTickets/ConcertTickets/Views/Order/Succes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcU3VjY2VzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Gebruiker/source/repos/AD-Project-2425/ConcertTickets/ConcertTickets/Views/Shared/Error.cshtml]

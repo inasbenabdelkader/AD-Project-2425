@@ -19,5 +19,10 @@ namespace ConcertTickets.Repositories
 				.Include(t => t.Concert)
 				.FirstOrDefault(t => t.Id == id);
 		}
+
+		public void SaveChanges()
+		{
+			_context.SaveChanges();
+		}
 	}
 }

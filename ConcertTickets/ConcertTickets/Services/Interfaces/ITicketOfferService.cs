@@ -1,4 +1,6 @@
-﻿namespace ConcertTickets.Services.Interfaces
+﻿using ConcertTickets.Models.ViewModel;
+
+namespace ConcertTickets.Services.Interfaces
 {
 	public interface ITicketOfferService
 	{

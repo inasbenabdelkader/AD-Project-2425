@@ -1,0 +1,60 @@
+﻿@using ConcertTickets.Models.ViewModel
+@model OrderFormViewModel
+
+<div class="container">
+    <div class="row justify-content-center">
+       
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    
+                    <h5 class="card-title">Tickets bestellen</h5>
+                    <p>
+                        @Model.ConcertInfo
+                    </p>
+                    <p>
+                        @Model.TicketType - €@Model.Price
+                    </p>
+
+                   
+                    @if (Model.DiscountApplied)
+                    {
+                        <div class="alert alert-success">
+                            10% korting toegepast (lidkaart)
+                        </div>
+                    }
+
+                   
+                    <form asp-action="Create" method="post">
+                     
+                        <input type="hidden" asp-for="TicketOfferId" />
+                        <input type="hidden" asp-for="UserId" />
+                        <input type="hidden" asp-for="UserName" />
+
+                        <div class="mb-3">
+                            <label asp-for="NumTickets" class="form-label">
+                                Aantal tickets
+                            </label>
+                            <input asp-for="NumTickets" class="form-control" />
+                            <span asp-validation-for="NumTickets" class="text-danger"></span>
+                        </div>
+
+                      
+                        <div class="mb-3 form-check">
+                            <input asp-for="AcceptTerms" class="form-check-input" />
+                            <label asp-for="AcceptTerms" class="form-check-label">
+                                Ik ga akkoord met de algemene voorwaarden
+                            </label>
+                            <span asp-validation-for="AcceptTerms" class="text-danger"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            Bestellen
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

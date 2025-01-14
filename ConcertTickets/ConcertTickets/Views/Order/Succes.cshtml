@@ -1,0 +1,43 @@
+﻿@using ConcertTickets.Models.ViewModel
+@model OrderViewModel
+
+<div class="container">
+  
+    <div class="alert alert-success">
+        <h4>Bestelling geplaatst!</h4>
+        <p>
+            Bedankt voor je bestelling, @Model.UserName!
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+         
+            <h5 class="card-title">Bestelgegevens</h5>
+
+            
+            <ul class="list-unstyled">
+                <li>
+                    Concert: @Model.ConcertInfo
+                </li>
+                <li>
+                    Type ticket: @Model.TicketType
+                </li>
+                <li>
+                    Aantal tickets: @Model.NumTickets
+                </li>
+                <li>
+                    Totaalprijs: €@Model.TotalPrice
+                </li>
+
+                @if (Model.DiscountApplied)
+                {
+                    <li>
+                        10% korting toegepast
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+

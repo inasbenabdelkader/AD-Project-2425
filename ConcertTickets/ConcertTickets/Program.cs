@@ -34,9 +34,10 @@ namespace ConcertTickets
 
 
             var app = builder.Build();
+			SeedClaimsAsync(app.Services).GetAwaiter().GetResult();
 
-            // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
+			// Configure the HTTP request pipeline.
+			if (app.Environment.IsDevelopment())
             {
                 app.UseMigrationsEndPoint();
             }
@@ -62,28 +63,42 @@ namespace ConcertTickets
             app.RunAsync();
         }
 
-        private static async Task CreateAdminUserAsync(WebApplication app)
-        {
-            using (var scope = app.Services.CreateScope())
+		static async Task SeedClaimsAsync(IServiceProvider serviceProvider)
+		{
+			const string ADMIN_ACCOUNT = "admin@test.be";
+			const string ADMIN_PASSWORD = "Admin@123";
+			using var scope = serviceProvider.CreateScope();
+			var userManager = scope.ServiceProvider.GetRequiredService<UserManager<CustomUser>>();
+
+			var user = await userManager.FindByEmailAsync(ADMIN_ACCOUNT);
+			if (user == null)
+			{
+				// Optioneel: maak een standaardgebruiker aan als die niet bestaat
+				user = new CustomUser
+				{
+					FirstName = "Admin",
+					LastName = "User",
+					UserName = ADMIN_ACCOUNT,
+					Email = ADMIN_ACCOUNT,
+					EmailConfirmed = true
+				};
+				await userManager.CreateAsync(user, ADMIN_PASSWORD); // Standaard wachtwoord
+			}
+
+            // Voeg claims toe aan de gebruiker
+            var claims = new[]
             {
-                var userManager = scope.ServiceProvider.GetRequiredService<UserManager<CustomUser>>();
-                var admin = await userManager.FindByEmailAsync("admin@odisee.be");
+        new Claim("IsAdmin", "true"),
 
-                if (admin == null)
-                {
-                    admin = new CustomUser
-                    {
-                        UserName = "admin@odisee.be",
-                        Email = "admin@odisee.be",
-                        FirstName = "Admin",
-                        LastName = "User",
-                        EmailConfirmed = true
-                    };
+           };
 
-                    await userManager.CreateAsync(admin, "Admin123!");
-                    await userManager.AddClaimAsync(admin, new Claim("IsAdmin", "true"));
-                }
-            }
-        }
-    }
+			foreach (var claim in claims)
+			{
+				if (!(await userManager.GetClaimsAsync(user)).Any(c => c.Type == claim.Type))
+				{
+					await userManager.AddClaimAsync(user, claim);
+				}
+			}
+		}
+	}
 }
