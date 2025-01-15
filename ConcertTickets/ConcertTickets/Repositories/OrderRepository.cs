@@ -1,6 +1,8 @@
 ﻿using ConcertTickets.Data;
 using ConcertTickets.Models.Entities;
 using ConcertTickets.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace ConcertTickets.Repositories
 {
@@ -29,5 +31,17 @@ namespace ConcertTickets.Repositories
 				.ThenInclude(t => t.Concert)
 				.FirstOrDefault(o => o.Id == id);
 		}
+
+		public void AddOrder(Order order)
+		{
+			_context.Orders.Add(order);
+		}
+
+		public void SaveChanges()
+		{
+			_context.SaveChanges();
+		}
 	}
 }
+	
+

@@ -6,10 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ConcertTickets.Controllers
-{
-	public class OrderController : Controller
-	{
-		public class OrderController : Controller
+{     public class OrderController : Controller
 		{
 			private readonly IOrderService _orderService;
 			private readonly ITicketOfferService _ticketOfferService;
@@ -68,4 +65,4 @@ namespace ConcertTickets.Controllers
 			}
 		}
 	}
-}
+

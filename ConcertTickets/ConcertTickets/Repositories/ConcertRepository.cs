@@ -1,6 +1,7 @@
 ﻿using ConcertTickets.Data;
 using ConcertTickets.Models.Entities;
 using ConcertTickets.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace ConcertTickets.Repositories
 {

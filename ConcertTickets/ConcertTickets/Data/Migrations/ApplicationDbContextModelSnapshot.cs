@@ -22,6 +22,349 @@ namespace ConcertTickets.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("ConcertTickets.Models.Entities.Concert", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Artist")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Location")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Artist", "Location", "Date")
+                        .IsUnique();
+
+                    b.ToTable("Concerts");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Artist = "Taylor Swift",
+                            Date = new DateTime(2025, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Location = "Koning Boudewijn Stadion, Brussel"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Artist = "Taylor Swift",
+                            Date = new DateTime(2025, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Location = "Koning Boudewijn Stadion, Brussel"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Artist = "Charli XCX",
+                            Date = new DateTime(2025, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Location = "Vorst Nationaal, Brussel"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Artist = "Compact Disk Dummies",
+                            Date = new DateTime(2025, 4, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Location = "Ancienne Belgique, Brussel"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Artist = "Compact Disk Dummies",
+                            Date = new DateTime(2025, 4, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Location = "Ancienne Belgique, Brussel"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Artist = "Coldplay",
+                            Date = new DateTime(2025, 5, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Location = "Sportpaleis, Antwerpen"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Artist = "Dua Lipa",
+                            Date = new DateTime(2025, 6, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Location = "Werchter"
+                        });
+                });
+
+            modelBuilder.Entity("ConcertTickets.Models.Entities.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("DiscountApplied")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("NumTickets")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Paid")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("TicketOfferId")
+                        .HasColumnType("int");
+
+                    b.Property<double>("TotalPrice")
+                        .HasColumnType("float");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TicketOfferId");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("ConcertTickets.Models.Entities.TicketOffer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ConcertId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("NumTickets")
+                        .HasColumnType("int");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
+                    b.Property<string>("TicketType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ConcertId");
+
+                    b.ToTable("TicketOffers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ConcertId = 1,
+                            NumTickets = 10,
+                            Price = 200.0,
+                            TicketType = "Golden Circle"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ConcertId = 1,
+                            NumTickets = 50,
+                            Price = 50.0,
+                            TicketType = "Standing"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            ConcertId = 1,
+                            NumTickets = 60,
+                            Price = 60.0,
+                            TicketType = "Seated"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            ConcertId = 2,
+                            NumTickets = 1000,
+                            Price = 200.0,
+                            TicketType = "Golden Circle"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            ConcertId = 2,
+                            NumTickets = 19000,
+                            Price = 50.0,
+                            TicketType = "Standing"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            ConcertId = 2,
+                            NumTickets = 20000,
+                            Price = 60.0,
+                            TicketType = "Seated"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            ConcertId = 4,
+                            NumTickets = 2000,
+                            Price = 28.0,
+                            TicketType = "Standing"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            ConcertId = 4,
+                            NumTickets = 1800,
+                            Price = 32.0,
+                            TicketType = "Seated"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            ConcertId = 5,
+                            NumTickets = 2000,
+                            Price = 28.0,
+                            TicketType = "Standing"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            ConcertId = 5,
+                            NumTickets = 7800,
+                            Price = 32.0,
+                            TicketType = "Seated"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            ConcertId = 6,
+                            NumTickets = 400,
+                            Price = 150.0,
+                            TicketType = "Golden Circle"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            ConcertId = 6,
+                            NumTickets = 4000,
+                            Price = 65.0,
+                            TicketType = "Standing"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            ConcertId = 6,
+                            NumTickets = 4000,
+                            Price = 55.0,
+                            TicketType = "Seated"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            ConcertId = 7,
+                            NumTickets = 1000,
+                            Price = 124.0,
+                            TicketType = "Golden Circle"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            ConcertId = 7,
+                            NumTickets = 20000,
+                            Price = 67.0,
+                            TicketType = "Standing"
+                        });
+                });
+
+            modelBuilder.Entity("ConcertTickets.Models.Identity.CustomUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("FirstName")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("LastName")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("MemberCardNumber")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.ToTable("AspNetUsers", (string)null);
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -72,71 +415,6 @@ namespace ConcertTickets.Data.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetRoleClaims", (string)null);
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("AccessFailedCount")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("NormalizedEmail")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("PasswordHash")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("SecurityStamp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("UserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NormalizedEmail")
-                        .HasDatabaseName("EmailIndex");
-
-                    b.HasIndex("NormalizedUserName")
-                        .IsUnique()
-                        .HasDatabaseName("UserNameIndex")
-                        .HasFilter("[NormalizedUserName] IS NOT NULL");
-
-                    b.ToTable("AspNetUsers", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -224,6 +502,28 @@ namespace ConcertTickets.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("ConcertTickets.Models.Entities.Order", b =>
+                {
+                    b.HasOne("ConcertTickets.Models.Entities.TicketOffer", "TicketOffer")
+                        .WithMany()
+                        .HasForeignKey("TicketOfferId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TicketOffer");
+                });
+
+            modelBuilder.Entity("ConcertTickets.Models.Entities.TicketOffer", b =>
+                {
+                    b.HasOne("ConcertTickets.Models.Entities.Concert", "Concert")
+                        .WithMany("TicketOffers")
+                        .HasForeignKey("ConcertId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Concert");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -235,7 +535,7 @@ namespace ConcertTickets.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("ConcertTickets.Models.Identity.CustomUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -244,7 +544,7 @@ namespace ConcertTickets.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("ConcertTickets.Models.Identity.CustomUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -259,7 +559,7 @@ namespace ConcertTickets.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("ConcertTickets.Models.Identity.CustomUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -268,11 +568,16 @@ namespace ConcertTickets.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("ConcertTickets.Models.Identity.CustomUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("ConcertTickets.Models.Entities.Concert", b =>
+                {
+                    b.Navigation("TicketOffers");
                 });
 #pragma warning restore 612, 618
         }

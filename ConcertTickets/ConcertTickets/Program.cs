@@ -12,31 +12,25 @@ namespace ConcertTickets
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
-            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-            builder.Services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(connectionString));
-            builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+			builder.Services.AddDbContext<ApplicationDbContext>(options =>
+	      options.UseSqlServer(
+		 builder.Configuration.GetConnectionString("DefaultConnection")));
 
-            builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
-            builder.Services.AddControllersWithViews();
-            builder.Services.Configure<IdentityOptions>(options =>
-            {
-                options.SignIn.RequireConfirmedAccount = false;
-                options.Lockout.MaxFailedAccessAttempts = 5;
-                options.Password.RequireDigit = false;
-                options.Password.RequireLowercase = true;
-                options.Password.RequireUppercase = false;
-                options.Password.RequireNonAlphanumeric = false;
-                options.Password.RequiredLength = 6;
-            });
+			builder.Services.AddDefaultIdentity<CustomUser>(options => {
+				options.SignIn.RequireConfirmedAccount = false;
+				options.Password.RequireDigit = false;
+				options.Password.RequireLowercase = true;
+				options.Password.RequireUppercase = false;
+				options.Password.RequireNonAlphanumeric = false;
+				options.Password.RequiredLength = 6;
+			})
+				.AddEntityFrameworkStores<ApplicationDbContext>();
 
+			builder.Services.AddRazorPages();
 
-            var app = builder.Build();
+			var app = builder.Build();
 			SeedClaimsAsync(app.Services).GetAwaiter().GetResult();
 
-			// Configure the HTTP request pipeline.
 			if (app.Environment.IsDevelopment())
             {
                 app.UseMigrationsEndPoint();
@@ -44,7 +38,7 @@ namespace ConcertTickets
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+               
                 app.UseHsts();
             }
 
@@ -73,7 +67,7 @@ namespace ConcertTickets
 			var user = await userManager.FindByEmailAsync(ADMIN_ACCOUNT);
 			if (user == null)
 			{
-				// Optioneel: maak een standaardgebruiker aan als die niet bestaat
+				
 				user = new CustomUser
 				{
 					FirstName = "Admin",
@@ -82,10 +76,10 @@ namespace ConcertTickets
 					Email = ADMIN_ACCOUNT,
 					EmailConfirmed = true
 				};
-				await userManager.CreateAsync(user, ADMIN_PASSWORD); // Standaard wachtwoord
+				await userManager.CreateAsync(user, ADMIN_PASSWORD); 
 			}
 
-            // Voeg claims toe aan de gebruiker
+          
             var claims = new[]
             {
         new Claim("IsAdmin", "true"),

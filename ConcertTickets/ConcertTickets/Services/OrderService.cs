@@ -31,7 +31,7 @@ namespace ConcertTickets.Services
 				TicketOfferId = model.TicketOfferId,
 			};
 
-			_orderRepository.Add(order);
+			_orderRepository.AddOrder(order); // Fixed method name
 			_orderRepository.SaveChanges();
 
 			return order.Id;

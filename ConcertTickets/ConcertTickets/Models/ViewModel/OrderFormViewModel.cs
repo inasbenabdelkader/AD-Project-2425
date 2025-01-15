@@ -27,3 +27,24 @@ namespace ConcertTickets.Models.ViewModel
 		public string UserName { get; set; }
 	}
 }
+
+namespace ConcertTickets.Models.Validation
+{
+	public class MustBeTrueAttribute : ValidationAttribute, IClientModelValidator
+	{
+		protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+		{
+			if (value is bool boolValue && boolValue)
+			{
+				return ValidationResult.Success;
+			}
+			return new ValidationResult(ErrorMessage);
+		}
+
+		public void AddValidation(ClientModelValidationContext context)
+		{
+			context.Attributes.Add("data-val", "true");
+			context.Attributes.Add("data-val-mustbetrue", ErrorMessage);
+		}
+	}
+}

@@ -6,5 +6,7 @@ namespace ConcertTickets.Repositories.Interfaces
 	{
 		IEnumerable<Order> GetOrdersByStatus(bool paid);
 		Order GetOrderById(int id);
+		void AddOrder(Order order);
+		void SaveChanges();
 	}
 }
