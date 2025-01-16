@@ -4,25 +4,25 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\ConcertTickets.yb2zp7kh7y.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-clS957mhntO5BcjvgcoQhLdKCue1xpvh\u002BdboTeMdo1Y="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1132"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022clS957mhntO5BcjvgcoQhLdKCue1xpvh\u002BdboTeMdo1Y=\u0022"},{"Name":"Last-Modified","Value":"Wed, 15 Jan 2025 20:34:53 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1132"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022clS957mhntO5BcjvgcoQhLdKCue1xpvh\u002BdboTeMdo1Y=\u0022"},{"Name":"Last-Modified","Value":"Thu, 16 Jan 2025 12:43:05 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/ConcertTickets/ConcertTickets.yb2zp7kh7y.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\ConcertTickets.yb2zp7kh7y.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"yb2zp7kh7y"},{"Name":"integrity","Value":"sha256-clS957mhntO5BcjvgcoQhLdKCue1xpvh\u002BdboTeMdo1Y="},{"Name":"label","Value":"_content/ConcertTickets/ConcertTickets.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1132"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022clS957mhntO5BcjvgcoQhLdKCue1xpvh\u002BdboTeMdo1Y=\u0022"},{"Name":"Last-Modified","Value":"Wed, 15 Jan 2025 20:34:53 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1132"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022clS957mhntO5BcjvgcoQhLdKCue1xpvh\u002BdboTeMdo1Y=\u0022"},{"Name":"Last-Modified","Value":"Thu, 16 Jan 2025 12:43:05 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/ConcertTickets/css/site.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-XdJQOX4VGgufxRx6kgrp15EhNBtPs/QlwDyRXDeJ5uc="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2117"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022XdJQOX4VGgufxRx6kgrp15EhNBtPs/QlwDyRXDeJ5uc=\u0022"},{"Name":"Last-Modified","Value":"Wed, 15 Jan 2025 13:01:16 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-WXuHvIqLgiIDwBajU8Nt6THmdAP4OGJrFi4aMFex4ac="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"4417"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022WXuHvIqLgiIDwBajU8Nt6THmdAP4OGJrFi4aMFex4ac=\u0022"},{"Name":"Last-Modified","Value":"Thu, 16 Jan 2025 21:15:39 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/ConcertTickets/css/site.jwhke2c7wz.css">
+    <StaticWebAssetEndpoint Include="_content/ConcertTickets/css/site.pg8mj15v5b.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"jwhke2c7wz"},{"Name":"integrity","Value":"sha256-XdJQOX4VGgufxRx6kgrp15EhNBtPs/QlwDyRXDeJ5uc="},{"Name":"label","Value":"_content/ConcertTickets/css/site.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2117"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022XdJQOX4VGgufxRx6kgrp15EhNBtPs/QlwDyRXDeJ5uc=\u0022"},{"Name":"Last-Modified","Value":"Wed, 15 Jan 2025 13:01:16 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"pg8mj15v5b"},{"Name":"integrity","Value":"sha256-WXuHvIqLgiIDwBajU8Nt6THmdAP4OGJrFi4aMFex4ac="},{"Name":"label","Value":"_content/ConcertTickets/css/site.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"4417"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022WXuHvIqLgiIDwBajU8Nt6THmdAP4OGJrFi4aMFex4ac=\u0022"},{"Name":"Last-Modified","Value":"Thu, 16 Jan 2025 21:15:39 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/ConcertTickets/favicon.61n19gt1b8.ico">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico'))</AssetFile>

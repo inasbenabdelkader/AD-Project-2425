@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DKMBlmvMDbr1bsXJUEzvZOEyShOrIo+et3jfW8Yv8Nk=",
+  "Hash": "JyJnVp4UM193OcimR8eO3y9ezDs1dhPhjfXLqPTZdp0=",
   "Source": "ConcertTickets",
   "BasePath": "_content/ConcertTickets",
   "Mode": "Default",
@@ -1333,8 +1333,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "jwhke2c7wz",
-      "Integrity": "XdJQOX4VGgufxRx6kgrp15EhNBtPs/QlwDyRXDeJ5uc=",
+      "Fingerprint": "pg8mj15v5b",
+      "Integrity": "WXuHvIqLgiIDwBajU8Nt6THmdAP4OGJrFi4aMFex4ac=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -2792,7 +2792,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 15 Jan 2025 20:34:53 GMT"
+          "Value": "Thu, 16 Jan 2025 12:43:05 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2829,7 +2829,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 15 Jan 2025 20:34:53 GMT"
+          "Value": "Thu, 16 Jan 2025 12:43:05 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2866,7 +2866,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 15 Jan 2025 20:34:53 GMT"
+          "Value": "Thu, 16 Jan 2025 12:43:05 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2911,7 +2911,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 15 Jan 2025 20:34:53 GMT"
+          "Value": "Thu, 16 Jan 2025 12:43:05 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2944,7 +2944,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2117"
+          "Value": "4417"
         },
         {
           "Name": "Content-Type",
@@ -2952,11 +2952,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"XdJQOX4VGgufxRx6kgrp15EhNBtPs/QlwDyRXDeJ5uc=\""
+          "Value": "\"WXuHvIqLgiIDwBajU8Nt6THmdAP4OGJrFi4aMFex4ac=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 15 Jan 2025 13:01:16 GMT"
+          "Value": "Thu, 16 Jan 2025 21:15:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2966,12 +2966,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-XdJQOX4VGgufxRx6kgrp15EhNBtPs/QlwDyRXDeJ5uc="
+          "Value": "sha256-WXuHvIqLgiIDwBajU8Nt6THmdAP4OGJrFi4aMFex4ac="
         }
       ]
     },
     {
-      "Route": "css/site.jwhke2c7wz.css",
+      "Route": "css/site.pg8mj15v5b.css",
       "AssetFile": "C:\\Users\\Gebruiker\\source\\repos\\AD-Project-2425\\ConcertTickets\\ConcertTickets\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2981,7 +2981,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2117"
+          "Value": "4417"
         },
         {
           "Name": "Content-Type",
@@ -2989,11 +2989,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"XdJQOX4VGgufxRx6kgrp15EhNBtPs/QlwDyRXDeJ5uc=\""
+          "Value": "\"WXuHvIqLgiIDwBajU8Nt6THmdAP4OGJrFi4aMFex4ac=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 15 Jan 2025 13:01:16 GMT"
+          "Value": "Thu, 16 Jan 2025 21:15:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3003,7 +3003,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "jwhke2c7wz"
+          "Value": "pg8mj15v5b"
         },
         {
           "Name": "label",
@@ -3011,7 +3011,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-XdJQOX4VGgufxRx6kgrp15EhNBtPs/QlwDyRXDeJ5uc="
+          "Value": "sha256-WXuHvIqLgiIDwBajU8Nt6THmdAP4OGJrFi4aMFex4ac="
         }
       ]
     },

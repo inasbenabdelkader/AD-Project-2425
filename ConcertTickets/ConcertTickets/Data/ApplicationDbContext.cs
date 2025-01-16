@@ -7,15 +7,14 @@ namespace ConcertTickets.Data
 {
 	public class ApplicationDbContext : IdentityDbContext<CustomUser>
 	{
-		public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-			: base(options)
-		{
-		}
-
 		public DbSet<Concert> Concerts { get; set; }
 		public DbSet<TicketOffer> TicketOffers { get; set; }
 		public DbSet<Order> Orders { get; set; }
 
+		public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+			: base(options)
+		{
+		}
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			base.OnModelCreating(modelBuilder);

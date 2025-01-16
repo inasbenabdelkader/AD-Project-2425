@@ -8,7 +8,7 @@ namespace ConcertTickets.Models.ViewModel
 		public string Artist { get; set; }
 		public string Location { get; set; }
 		public DateTime Date { get; set; }
-		public string ArtistPicture => $"/img/{Artist.Replace(" ", "")}.jpg";
+		public string ArtistPicture => $"/img/{Artist.Replace(" ", "")}.png";
 		public int TotalAvailableTickets => TicketOffers?.Sum(t => t.NumTickets) ?? 0;
 		public IEnumerable<TicketOffer> TicketOffers { get; set; }
 	}

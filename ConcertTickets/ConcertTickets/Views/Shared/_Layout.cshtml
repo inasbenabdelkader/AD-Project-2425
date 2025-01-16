@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Odisee Concerts</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm">
             <div class="container">
                 <a class="navbar-brand" asp-controller="Home" asp-action="Index">
-                    <img src="~/img/logo.png" alt="Odisee Concerts" height="30" />
+                    <img src="~/img/OdiseeConcertsLogo.png" alt="Odisee Concerts" height="30" class="d-inline-block align-top" />
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -20,7 +20,7 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Concert" asp-action="Index">Concerts</a>
+                            <a class="nav-link " asp-controller="Concert" asp-action="Index">Concerts</a>
                         </li>
                         @if (User.HasClaim("IsAdmin", "true"))
                         {
@@ -35,14 +35,14 @@
         </nav>
     </header>
 
-    <main role="main" class="pb-3">
-        <div class="container">
+    <div class="container">
+        <main role="main" class="pb-3">
             @RenderBody()
-        </div>
-    </main>
+        </main>
+    </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
+    <footer class="footer text-muted bg-light border-top">
+        <div class="container py-3">
             &copy; @DateTime.Now.Year - Odisee Concerts
         </div>
     </footer>

@@ -28,6 +28,15 @@ namespace ConcertTickets.Services
 			};
 		}
 
+		public OrderFormViewModel GetTicketOfferForOrder(int ticketOfferId, object hasMemberCard)
+		{
+			if (hasMemberCard is bool memberCard)
+			{
+				return GetTicketOfferForOrder(ticketOfferId, memberCard);
+			}
+			throw new ArgumentException("Invalid type for hasMemberCard", nameof(hasMemberCard));
+		}
+
 		public void UpdateTicketOffer(TicketOfferUpdateViewModel model)
 		{
 			var ticketOffer = _ticketOfferRepository.GetTicketOfferById(model.Id);
@@ -35,5 +44,4 @@ namespace ConcertTickets.Services
 			_ticketOfferRepository.SaveChanges();
 		}
 	}
-
 }
