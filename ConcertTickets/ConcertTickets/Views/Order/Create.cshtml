@@ -3,20 +3,11 @@
 
 <div class="container">
     <div class="row justify-content-center">
-       
         <div class="col-md-6">
             <div class="card">
                 <div class="card-body">
-                    
                     <h5 class="card-title">Tickets bestellen</h5>
-                    <p>
-                        @Model.ConcertInfo
-                    </p>
-                    <p>
-                        @Model.TicketType - €@Model.Price
-                    </p>
 
-                   
                     @if (Model.DiscountApplied)
                     {
                         <div class="alert alert-success">
@@ -24,22 +15,23 @@
                         </div>
                     }
 
-                   
-                    <form asp-action="Create" method="post">
-                     
+                    <form asp-controller="Order" asp-action="Create" method="post" id="orderForm">
+                        @Html.AntiForgeryToken()
+
                         <input type="hidden" asp-for="TicketOfferId" />
                         <input type="hidden" asp-for="UserId" />
                         <input type="hidden" asp-for="UserName" />
+                        <input type="hidden" asp-for="Price" />
+                        <input type="hidden" asp-for="DiscountApplied" />
+                        <input type="hidden" asp-for="ConcertInfo" />
+                        <input type="hidden" asp-for="TicketType" />
 
                         <div class="mb-3">
-                            <label asp-for="NumTickets" class="form-label">
-                                Aantal tickets
-                            </label>
-                            <input asp-for="NumTickets" class="form-control" />
+                            <label asp-for="NumTickets" class="form-label">Aantal tickets</label>
+                            <input asp-for="NumTickets" class="form-control" min="1" max="5" />
                             <span asp-validation-for="NumTickets" class="text-danger"></span>
                         </div>
 
-                      
                         <div class="mb-3 form-check">
                             <input asp-for="AcceptTerms" class="form-check-input" />
                             <label asp-for="AcceptTerms" class="form-check-label">
@@ -48,7 +40,7 @@
                             <span asp-validation-for="AcceptTerms" class="text-danger"></span>
                         </div>
 
-                        <button type="submit" asp-action="Succes" class="btn btn-primary">
+                        <button type="submit" class="btn btn-primary" id="submitButton">
                             Bestellen
                         </button>
                     </form>
@@ -58,3 +50,35 @@
     </div>
 </div>
 
+@section Scripts {
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+}
+    <script>
+        $(document).ready(function() {
+            $('#orderForm').on('submit', function(e) {
+                console.log('Form submitting...');
+                
+                if ($(this).valid()) {
+                    console.log('Form is valid');
+                    return true;
+                } else {
+                    console.log('Form is invalid');
+                    e.preventDefault();
+                    return false;
+                }
+            });
+
+            $('#NumTickets').on('change', function() {
+                var value = parseInt($(this).val());
+                if (value < 1) {
+                    $(this).val(1);
+                } else if (value > 5) {
+                    $(this).val(5)
+                 }
+              }
+		  );
+	  });
+</script>

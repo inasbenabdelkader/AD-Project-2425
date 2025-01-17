@@ -18,23 +18,37 @@ namespace ConcertTickets.Services
 
 		public int CreateOrder(OrderFormViewModel model)
 		{
-			var ticketOffer = _ticketOfferRepository.GetTicketOfferById(model.TicketOfferId);
-
-			var order = new Order
+			try
 			{
-				UserId = model.UserId,
-				UserName = model.UserName,
-				NumTickets = model.NumTickets,
-				TotalPrice = model.Price * model.NumTickets,
-				Paid = false,
-				DiscountApplied = model.DiscountApplied,
-				TicketOfferId = model.TicketOfferId,
-			};
+				var ticketOffer = _ticketOfferRepository.GetTicketOfferById(model.TicketOfferId);
+				if (ticketOffer == null)
+				{
+					throw new ArgumentException("Ticket offer not found");
+				}
 
-			_orderRepository.AddOrder(order); 
-			_orderRepository.SaveChanges();
+				var order = new Order
+				{
+					UserId = model.UserId,
+					UserName = model.UserName,
+					NumTickets = model.NumTickets,
+					TotalPrice = model.Price * model.NumTickets,
+					DiscountApplied = model.DiscountApplied,
+					TicketOfferId = model.TicketOfferId,
+					
+				};
 
-			return order.Id;
+				_orderRepository.AddOrder(order);
+				_orderRepository.SaveChanges();
+
+				
+
+				return order.Id;
+			}
+			catch (Exception ex)
+			{
+				// Log the exception
+				throw;
+			}
 		}
 
 		public IEnumerable<OrderViewModel> GetOrdersByStatus(bool paid)

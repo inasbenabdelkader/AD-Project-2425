@@ -1,4 +1,5 @@
-﻿using ConcertTickets.Models.Identity;
+﻿using AspNetCoreGeneratedDocument;
+using ConcertTickets.Models.Identity;
 using ConcertTickets.Models.ViewModel;
 using ConcertTickets.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -58,10 +59,11 @@ namespace ConcertTickets.Controllers
 			};
 			_ticketOfferService.UpdateTicketOffer(updateModel);
 
-			return RedirectToAction(nameof(Success), new { id = orderId });
+			return RedirectToAction(nameof(Succes), new { id = orderId });
 		}
 
-		public IActionResult Success(int id)
+
+		public IActionResult Succes(int id)
 		{
 			var order = _orderService.GetOrderById(id);
 			return View(order);
