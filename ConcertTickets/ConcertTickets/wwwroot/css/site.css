@@ -186,8 +186,8 @@ body {
 }
 
     .navbar-brand img {
-        filter: brightness(0) invert(1);
-        height: 30px;
+        height: 100px;
+ 
     }
 
 .nav-link {
