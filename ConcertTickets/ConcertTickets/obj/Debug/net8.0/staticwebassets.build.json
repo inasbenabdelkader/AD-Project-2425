@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6OYqEH654WbkpDnR8+skWUFn69vNSgLc+C8pqweF9qU=",
+  "Hash": "YxS9DavAS5+oaBoDIu0rzRxnnPGbZAyxZVMymLNMAt4=",
   "Source": "ConcertTickets",
   "BasePath": "_content/ConcertTickets",
   "Mode": "Default",
@@ -1333,8 +1333,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "27mj77t3fk",
-      "Integrity": "HmpaXvz8D+J0FlxQYL8ndcWbbFlJ2M3plr+jNdPK8sI=",
+      "Fingerprint": "ecfavrhokf",
+      "Integrity": "0rjI83GIGWK2GZFL/eNrC+D/Gx+msOPMJfn0A8+vfyI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -2934,51 +2934,6 @@
       ]
     },
     {
-      "Route": "css/site.27mj77t3fk.css",
-      "AssetFile": "C:\\Users\\Gebruiker\\source\\repos\\AD-Project-2425\\ConcertTickets\\ConcertTickets\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4379"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"HmpaXvz8D+J0FlxQYL8ndcWbbFlJ2M3plr+jNdPK8sI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 17 Jan 2025 18:51:32 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "27mj77t3fk"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-HmpaXvz8D+J0FlxQYL8ndcWbbFlJ2M3plr+jNdPK8sI="
-        }
-      ]
-    },
-    {
       "Route": "css/site.css",
       "AssetFile": "C:\\Users\\Gebruiker\\source\\repos\\AD-Project-2425\\ConcertTickets\\ConcertTickets\\wwwroot\\css\\site.css",
       "Selectors": [],
@@ -2989,7 +2944,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4379"
+          "Value": "361"
         },
         {
           "Name": "Content-Type",
@@ -2997,11 +2952,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"HmpaXvz8D+J0FlxQYL8ndcWbbFlJ2M3plr+jNdPK8sI=\""
+          "Value": "\"0rjI83GIGWK2GZFL/eNrC+D/Gx+msOPMJfn0A8+vfyI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 17 Jan 2025 18:51:32 GMT"
+          "Value": "Fri, 17 Jan 2025 22:18:59 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3011,7 +2966,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-HmpaXvz8D+J0FlxQYL8ndcWbbFlJ2M3plr+jNdPK8sI="
+          "Value": "sha256-0rjI83GIGWK2GZFL/eNrC+D/Gx+msOPMJfn0A8+vfyI="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.ecfavrhokf.css",
+      "AssetFile": "C:\\Users\\Gebruiker\\source\\repos\\AD-Project-2425\\ConcertTickets\\ConcertTickets\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "361"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0rjI83GIGWK2GZFL/eNrC+D/Gx+msOPMJfn0A8+vfyI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 17 Jan 2025 22:18:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ecfavrhokf"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0rjI83GIGWK2GZFL/eNrC+D/Gx+msOPMJfn0A8+vfyI="
         }
       ]
     },
